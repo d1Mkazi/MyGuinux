@@ -40,7 +40,7 @@ namespace MyGui.net
 		private async Task DownloadFileAsync(string url, string destinationPath, string bearerToken, CancellationTokenSource cts)
 		{
 			Util.httpClient.DefaultRequestHeaders.Add("User-Agent", "MyGui.NET");
-			Util.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
+			Util.httpClient.DefaultRequestHeaders.Authorization = string.IsNullOrEmpty(bearerToken) ? null : new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", bearerToken);
 			Util.httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/octet-stream"));
 
 			// Handle redirect (GitHub may redirect to raw content URL)

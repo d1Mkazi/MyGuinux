@@ -2171,7 +2171,7 @@ namespace MyGui.net
 		public static  async Task<UpdateInfo> CheckForUpdateAsync(string bearerToken = "")
 		{
 			httpClient.DefaultRequestHeaders.Add("User-Agent", "MyGui.NET");
-			httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", bearerToken);
+			httpClient.DefaultRequestHeaders.Authorization = string.IsNullOrEmpty(bearerToken) ? null : new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", bearerToken);
 			httpClient.DefaultRequestHeaders.Accept.Clear();
 
 			string json = "";
