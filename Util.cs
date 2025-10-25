@@ -1749,10 +1749,10 @@ namespace MyGui.net
 				cancelButton.ForeColor = SystemColors.ControlLightLight;
 			}
 
-			var colorEditoAlpharField = typeof(ColorPickerDialog).GetField("_showAlphaChannel", BindingFlags.NonPublic | BindingFlags.Instance);
-			if (colorEditoAlpharField != null)
+			var colorEditorAlphaField = typeof(ColorPickerDialog).GetField("_showAlphaChannel", BindingFlags.NonPublic | BindingFlags.Instance);
+			if (colorEditorAlphaField != null)
 			{
-				colorEditoAlpharField.SetValue(colorPicker, doAlpha);
+				colorEditorAlphaField.SetValue(colorPicker, doAlpha);
 			}
 
 			return colorPicker;
@@ -2168,7 +2168,7 @@ namespace MyGui.net
 
 		public static HttpClient httpClient = new HttpClient(new HttpClientHandler{ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator});
 
-		public static  async Task<UpdateInfo> CheckForUpdateAsync(string bearerToken = "")
+		public static async Task<UpdateInfo> CheckForUpdateAsync(string bearerToken = "")
 		{
 			httpClient.DefaultRequestHeaders.Add("User-Agent", "MyGui.NET");
 			httpClient.DefaultRequestHeaders.Authorization = string.IsNullOrEmpty(bearerToken) ? null : new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", bearerToken);
