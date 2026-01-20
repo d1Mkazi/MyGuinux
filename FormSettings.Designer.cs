@@ -874,7 +874,7 @@
 			// 
 			// buttonAddToDesktop
 			// 
-			buttonAddToDesktop.AccessibleDescription = "Add a shortcut to MyGui.NWT to current user's desktop.";
+			buttonAddToDesktop.AccessibleDescription = "Add a shortcut to MyGui.NET to current user's desktop.";
 			buttonAddToDesktop.FlatStyle = FlatStyle.System;
 			buttonAddToDesktop.Location = new Point(6, 22);
 			buttonAddToDesktop.Name = "buttonAddToDesktop";
