@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sh/fresh
+build/bin/MyGuinux

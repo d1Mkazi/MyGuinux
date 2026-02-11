@@ -2,4 +2,4 @@
 
 rm -rf build
 cmake --fresh -G "Unix Makefiles" -B build
-bash sh/build
+sh/build

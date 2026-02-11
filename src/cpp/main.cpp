@@ -8,15 +8,12 @@ int main(int argc, char **argv) {
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    const QUrl qurl(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app,
-        [qurl](QObject *obj, const QUrl &_qurl) {
-            if(!(obj && qurl == _qurl)) {
-                QCoreApplication::exit(1);
-            }
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed, &app,
+        []() {
+            QCoreApplication::exit(1);
         }, Qt::QueuedConnection
     );
-    engine.load(qurl);
+    engine.loadFromModule("gui", "Main");
 
     QObject *window = engine.rootObjects()[0];
     if(!window) {

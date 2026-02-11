@@ -2,10 +2,16 @@ include_directories(include)
 
 qt_add_executable(${PROJECT_NAME}
     cpp/main.cpp
-    qml/resources.qrc
 )
 
-target_link_directories(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Quick Qt6::Qml Qt6::Widgets)
+qt_add_qml_module(${PROJECT_NAME}
+    URI gui
+    QML_FILES
+        qml/Main.qml
+)
+    
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Quick)
 
 include(GNUInstallDirs)
 install(TARGETS ${PROJECT_NAME}
