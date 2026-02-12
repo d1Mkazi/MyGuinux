@@ -15,10 +15,5 @@ int main(int argc, char **argv) {
     );
     engine.loadFromModule("gui", "Main");
 
-    QObject *window = engine.rootObjects()[0];
-    if(!window) {
-        QCoreApplication::exit(2);
-    }
-
     return app.exec();
 }

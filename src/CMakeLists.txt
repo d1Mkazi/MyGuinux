@@ -8,9 +8,11 @@ qt_add_qml_module(${PROJECT_NAME}
     URI gui
     QML_FILES
         qml/Main.qml
+        qml/ToolSide.qml
+        qml/PropertiesTab.qml
+        qml/js/propertiesTab.js
 )
     
-
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Quick)
 
 include(GNUInstallDirs)
