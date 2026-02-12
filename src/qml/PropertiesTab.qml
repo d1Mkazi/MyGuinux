@@ -33,6 +33,8 @@ Column {
                 color: "grey"
                 
                 Text {
+                    height: parent.height * 0.75
+                    verticalAlignment: Text.AlignVCenter
                     anchors.left: parent.left
                     text: modelData
                 }
@@ -41,6 +43,8 @@ Column {
                     height: parent.height * 0.75
                     anchors.right: parent.right
                     placeholderText: "Enter"
+                    topPadding: 1
+                    bottomPadding: 1
                 }
             }
         }
