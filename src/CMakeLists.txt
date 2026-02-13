@@ -10,6 +10,7 @@ qt_add_qml_module(${PROJECT_NAME}
         qml/Main.qml
         qml/ToolSide.qml
         qml/PropertiesTab.qml
+        qml/Properties/MainProperties.qml
         qml/js/propertiesTab.js
 )
     
